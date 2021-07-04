@@ -46,7 +46,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Kubernetes do Kube
+      - name: Kubernetes do Mongo
         uses: Azure/k8s-set-context@v1.1
         with:
           method: kubeconfig
@@ -57,7 +57,7 @@ jobs:
           manifests: |
             k8s/mongodb/deployment.yml
             k8s/mongodb/service.yml
-      - name: Deploy tdo Web
+      - name: Deploy do Web
         uses: Azure/k8s-deploy@v1
         with:
           manifests: |
